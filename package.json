@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js",
-    "serve": "http-server dist -o --cors"
+    "serve": "http-server ./dist -o --cors"
   },
   "author": "",
   "license": "ISC",
