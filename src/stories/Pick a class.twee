@@ -1,0 +1,211 @@
+:: StoryTitle
+Pick a class
+
+
+:: StoryData
+{
+  "ifid": "9B9E5A32-42C4-4021-89F8-AAD9DD6D5059",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "Waking up...",
+  "zoom": 0.6
+}
+
+
+:: Agro {"position":"575,1750","size":"100,100"}
+<<if $mercuriality gte 2>>
+MERCURIALITY ROLL: SUCCESS!
+
+CHIEF OF STAFF
+Splendid! Back to your usual self. I'll walk with you to the War Room.
+<<else>>
+MERCURIALITY ROLL: FAILURE!
+
+CHIEF OF STAFF
+Hmmm...my professional opinion is that you do a little more, sir.
+
+[[Light up a Marlboro Red|Light up]]
+[[Find a mirror and give yourself a wink|Wink]]
+<</if>>
+
+
+:: Cowboy hat {"position":"750,1375","size":"100,100"}
+<<set $class to "Gunslinger">>
+<<set $brawn = +2>>
+<<set $dspeak = -1>>
+<<set $outfit to "cowboy hat">>
+
+CHIEF OF STAFF
+Wow, what a great $outfit!
+
+CLASS CHOSEN = <<print $class>>
+BRAWN = <<print $brawn>>
+DOUBLE-SPEAK = <<print $dspeak>>
+
+[[next]]
+
+
+:: Explore the closet {"position":"625,1125","size":"100,100"}
+You stumble into the closet on two wobbly legs. You grab the first thing you see.
+
+[[Cowboy hat]]
+[[Tuxedo]]
+[[Shirtless w/ khakis and boots]]
+
+
+
+:: He looks down at you {"position":"625,1000","size":"100,100"}
+CHIEF OF STAFF
+Are...are you not dressed yet? I understand, sir. How about you throw on some clothes and we'll go for a good ol' walk-n-talk!
+
+[[Explore the closet]]
+[[See if you can get away with your birthday suit]]
+
+
+:: I'm the President? {"position":"625,625","size":"100,100"}
+Yes. Yes, you are. And there's a man sitting across the room from you looking down at his phone, swiping with both thumbs furiously. Must be Fruit Ninja or Candy Crush. He looks up and sees that you're awake.
+
+<<set $intang = 0>>
+<<set $photo = 0>>
+
+[[Pretend to still be asleep]]
+[[Pretend you've been awake the whole time]]
+
+
+:: Introduction {"position":"625,875","size":"100,100"}
+CHIEF OF STAFF
+Good morning, sir! It was a wild one last night--my lampshade is still missing! But we've got a big day ahead of us. I think we should hop to it.
+
+[[He looks down at you]]
+
+
+:: Light up {"position":"700,1750","size":"100,100"}
+<<if $brawn gte 2>>
+BRAWN ROLL: SUCCESS!
+
+CHIEF OF STAFF
+Splendid! Back to your usual self. I'll walk with you to the War Room.
+<<else>>
+BRAWN ROLL: FAILURE!
+
+CHIEF OF STAFF
+Hmmm...my professional opinion is that you do a little more, sir.
+
+[[Find a mirror and give yourself a wink|Wink]]
+[[Channel your pallid-ness into a kind of blank aggression|Agro]]
+<</if>>
+
+
+:: Listen closely {"position":"625,375","size":"100,100"}
+...//He is sifting out the hearts of men
+before his judgment seat
+    Oh, be swift, my soul, to answer
+Him! Be jubilant, my feet!
+        Our God is marching on!//
+        
+[[What the hell is that? Open your eyes]]
+
+
+:: Pretend to still be asleep {"position":"625,750","size":"100,100"}
+<<if $intang lt 2>>
+INTANGIBILITY ROLL: FAIL
+Your colleague is used to this. You are a bad liar. He respects you enough to give you the grace of not going along with your charade. 
+<</if>>
+
+[[He gets up and walks towards you|Introduction]]
+
+
+:: Pretend you've been awake the whole time {"position":"750,750","size":"100,100"}
+<<if $intang lt 2>>
+INTANGIBILITY ROLL: FAIL
+
+Your colleague knows you. This is a job where you catch zzz's when you can. You're all past the point of shame when it comes to seeing each other snore.
+<</if>>
+
+[[He gets up and walks towards you|Introduction]]
+
+
+:: See if you can get away with your birthday suit {"position":"750,1125","size":"100,100"}
+<<if $photo lt 2>>
+PHOTOGENIA ROLL: FAIL
+
+You've lived a lifetime where you lacked the confidence to walk around naked, and you're not gonna cook some up with this hangover.
+<</if>>
+
+CHIEF OF STAFF
+If it makes it easier, sir, you can just go with the usual.
+
+[[Explore the closet]] 
+
+
+:: Shirtless w/ khakis and boots {"position":"625,1375","size":"100,100"}
+<<set $class to "Demagogue">>
+<<set $mercuriality = +2>>
+<<set $ambi = -1>>
+<<set $outfit to "shirtless w/ khakis and boots combo">>
+
+CHIEF OF STAFF
+Wow, what a great $outfit!
+
+CLASS CHOSEN = <<print $class>>
+MERCURIALITY = <<print $mercuriality>>
+AMBIVALENCE = <<print $ambi>>
+
+[[next]]
+
+
+:: Tuxedo {"position":"625,1250","size":"100,100"}
+<<nobr>>
+<<set $class to "Showman">>
+<<set $photo = +2>>
+<<set $faith = -1>>
+<<set $outfit to "tuxedo">>
+<</nobr>>
+CHIEF OF STAFF
+Wow, what a great $outfit!
+
+CLASS CHOSEN = <<print $class>>
+PHOTOGENIA = <<print $photo>>
+FAITH = <<print $faith>>
+
+[[next]]
+
+
+:: Waking up... {"position":"625,250","size":"100,100"}
+...out of the muckiness of half-dream sleep, you float towards consciousness. Your interoception is roughly how you remember it. You're lying on the side you usually lie on when you sleep. You're probably in the room you fell asleep in. That's good. But there's something else...what is it?
+
+[[Listen closely]]
+        
+
+
+
+:: What the hell is that? Open your eyes {"position":"625,500","size":"100,100"}
+You're not lying down at all. You're sitting upright in an office chair in your office. Which is the Oval Office.
+
+[[I'm the President?]]
+
+
+:: Wink {"position":"825,1750","size":"100,100"}
+<<if $photo gte 2>>
+PHOTOGENIA ROLL: SUCCESS!
+
+CHIEF OF STAFF
+Splendid! Back to your usual self. I'll walk with you to the War Room.
+<<else>>
+PHOTOGENIA ROLL: FAILURE!
+
+CHIEF OF STAFF
+Hmmm...my professional opinion is that you do a little more, sir.
+
+[[Light up a Marlboro Red|Light up]]
+[[Channel your pallid-ness into a kind of blank aggression|Agro]]
+<</if>>
+
+
+:: next {"position":"700,1500","size":"100,100"}
+CHIEF OF STAFF
+One more thing before we head out, sir. You look a little...pallid. Do you wanna splash water on your face...or something.
+
+[[Light up a Marlboro Red|Light up]]
+[[Find a mirror and give yourself a wink|Wink]]
+[[Channel your pallid-ness into a kind of blank aggression|Agro]]

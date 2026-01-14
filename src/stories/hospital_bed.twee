@@ -1,0 +1,153 @@
+:: StoryTitle
+hospital_bed
+
+
+:: StoryData
+{
+  "ifid": "55C214CF-E87E-4E39-932F-496754E6BC22",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Battle Hymn",
+  "zoom": 1
+}
+
+
+:: Am I dead? {"position":"200,475","size":"100,100"}
+Uh, no. I believe your eyes are closed.
+
+[[Are you in my head?]]
+[[Try to open your eyes]] 
+
+
+:: Are you in my head? {"position":"325,600","size":"100,100"}
+Ahem: I believe //you're// in //my// head.
+
+[[Am I dead?]] 
+[[Try to open your eyes]] 
+
+
+:: Battle Hymn {"position":"100,200","size":"100,100"}
+...//He is sifting out the hearts of men
+before his judgment seat
+    Oh, be swift, my soul, to answer
+Him! Be jubilant, my feet!
+        Our God is marching on!//
+        
+        [[Hello?]]
+
+
+:: Come up with something rude to say to the voice {"position":"325,950","size":"100,100"}
+You realize I'm a voice inside your head. You're talking to yourself. Do you realize that?
+
+[[Am I dead?]] 
+[[Try to open your eyes]] 
+
+
+:: Don't answer a question with another question. {"position":"575,725","size":"100,100"}
+Just figure it out for yourself. Don't put me in this position.
+
+[[Come up with something rude to say to the voice]] 
+[[Try to open your eyes]]
+
+
+:: Hello? {"position":"200,200","size":"100,100"}
+Ah, hello. 
+
+[[Who are you?]]
+[[Who am I?]]
+[[Where am I?]]
+
+
+:: I promise I won't get frightened. {"position":"325,825","size":"100,100"}
+Just figure it out for yourself. Don't put me in this position.
+
+[[Try to open your eyes]] 
+[[Come up with something rude to say to the voice]]
+
+
+:: I'm in a hospital? Am I dead? {"position":"75,450","size":"100,100"}
+Uh, you're in a hospital //bed//, but it doesn't look like you're in a hospital. It looks like you're in your office.
+
+[[Are you in my head?]]
+[[Try to open your eyes]] 
+
+
+:: Is anyone in here with me? {"position":"325,475","size":"100,100"}
+In your hospital bed? No. In the room, there's a guy picking his nose in the armchair next to the door. He's refusing to let people in.
+
+[[Is he my friend?]]
+[[Should I attack him?]]
+[[Try to open your eyes]] 
+
+
+:: Is he my friend? {"position":"450,600","size":"100,100"}
+Are you asking because you're wondering if you're in danger?
+
+[[Yes.]]
+[[No. I'm just trying to gather context.]]
+[[Don't answer a question with another question.|I promise I won't get frightened.]]
+
+
+:: No. I'm just trying to gather context. {"position":"600,600","size":"100,100"}
+Honestly, I know about as much as you do right now. You're definitely not in any danger.
+
+[[Am I dead?]] 
+[[Try to open your eyes]] 
+
+
+:: Okay...who am I? {"position":"200,700","size":"100,100"}
+I have a guess, but I'm not sure yet. And I think if I told you, it might frighten you.
+
+[[What do I look like?]]
+[[I promise I won't get frightened.]]
+
+
+:: Should I attack him? {"position":"450,725","size":"100,100"}
+I'd be surprised if you could wiggle your big toe at him right now.
+
+[[Come up with something rude to say to the voice]] 
+[[Am I dead?]] 
+[[Try to open your eyes]] 
+
+
+:: Try to open your eyes {"position":"450,950","size":"100,100"}
+"AHHHHHH!!!!" you scream, as the realness of your body becomes horribly...//real// to you.
+
+You pass out.
+
+
+:: What do I look like? {"position":"200,825","size":"100,100"}
+It's more like the specifics of the room you're in. And the way people have been talking about you. You //look//...I'm not sure how to begin to describe what you look like.
+
+[[Try to open your eyes]] 
+
+
+:: Where am I? {"position":"75,325","size":"100,100"}
+Well, it's dark in here, but you appear to be in a hospital bed.
+
+[[I'm in a hospital? Am I dead?]]
+[[Is anyone in here with me?]]
+[[Try to open your eyes]]
+
+
+:: Who am I? {"position":"325,325","size":"100,100"}
+I'm also trying to figure that out. You certainly look important.
+
+[[Am I dead?]]
+[[Is anyone in here with me?]]
+[[Try to open your eyes]]
+
+
+:: Who are you? {"position":"200,325","size":"100,100"}
+Who am I? Who are //you!// My goodness, enjoy the void while we're in it. 
+
+[[Am I dead?]]
+[[Okay...who am I?]]
+[[Try to open your eyes]]
+
+
+:: Yes. {"position":"387.5,1100","size":"100,100"}
+You're not in danger. Honestly, I know about as much as you do right now.
+
+[[Am I dead?]] 
+[[Try to open your eyes]] 
