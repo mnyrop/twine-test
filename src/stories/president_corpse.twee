@@ -1,0 +1,373 @@
+:: StoryTitle
+president_corpse
+
+
+:: StoryData
+{
+  "ifid": "215EB356-54BF-494F-902C-2E61D4767EF7",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "START",
+  "tag-colors": {
+    "no-undo": "red"
+  },
+  "zoom": 0.3
+}
+
+
+:: \ 1-1 {"position":"1700,700","size":"100,100"}
+''CHIEF OF STAFF--STANLEY PEPPERS''
+Perhaps more urgently: your Surgeon has gone missing. He's a bit of a strange character, haha! My understanding was that he was supposed to be here with me when you awoke to do a post-op inspection, but uh...haha! This is just the way things are!
+
+[[Next | 1-2]]
+
+
+:: \ 1-2 {"position":"1700,800","size":"100,100"}
+''CHIEF OF STAFF--STANLEY PEPPERS''
+Basically, we need to have your Surgeon take a look at you before you start leading our country to greatness! But it's up to you: I can walk you to Director Ume, or you can try to find your Surgeon yourself. What's your preference?
+
+[[You can take me to Director Ume. Let's not waste time.]]
+[[I'm going to be honest: I'm a little confused about what all is going on, and a stroll by myself doesn't sound so bad right now.]]
+
+
+:: \ 1-3 {"position":"1600,1100","size":"100,100"}
+''CHIEF OF STAFF--STANLEY PEPPERS''
+Director Ume! So glad you're still here doing...this. Haha! Per your request, I have brought you the new President of the United States. Ask and you shall receive! 
+
+Mr. President, this is Director of the Office of Management and Budget, Quentin Ume. I will leave you two to it while I try to address the mouse problem in my office. How did they even get here! Haha!
+
+[[Chief Peppers leaves | 1-4]]
+
+
+:: \ 1-4 {"position":"1600,1200","size":"100,100"}
+''DIRECTOR, OFFICE OF MANAGEMENT & BUDGET--QUENTIN UME''
+Pleasure to meet you, Mr. President, no matter the circumstances. I trust your first day in office has been a thrilling one. Peppers filled you in on my plan?
+
+[[Your plan?]]
+
+
+:: "Tug" the pull cord {"position":"1600,1700","size":"100,100"}
+First use of dice roll mechanic. Must roll 3< to open up White House maintenance menu. If you roll 4>, just roll again and again until you get it.
+
+White House maintenance menu opens up. Mechanics for this menu include:
+-A clock ticking down for the maintenance of the generators (starts as a 2-clock)
+-Temperature of the White House; currently 40 degrees; contingent on both power supply and fortification of the building against the elements (maybe the weather changes every day and has an effect on these systems)
+-Power supply to WH; areas in the WH begin to shut down if the power fails
+-Fortifications + insulation
+-"Skill tree" for development of better energy systems, fortifications, insulation, etc; better systems make the 2-clock larger; better systems change the consequences of low dice rolls
+-Starting dice roll for generators:
+	-5 & 6 = fill up clock
+    -3 & 4 = fill up half
+    -1 & 2 = don't fill up and temperature falls 5 degrees
+    
+[[Thanks for showing me this. Any idea where my Surgeon is?]]
+
+
+:: A pasty twenty-something with a clipboard comes into clear vision {"position":"1700,400","size":"100,100"}
+''SCRAWNY FIGURE''
+Ah, I think you're finally waking up! Thank goodness. We weren't sure how long it would take for you to come out of it. You're probably still disoriented--we'll get you right as rain soon.
+
+[[Who is this moose-hatted pencil-neck?]]
+
+
+:: Boogie {"position":"1600,1000","size":"100,100"}
+//Chief Peppers leads you out of the Oval Office carrying a big heavy lamp. Boy, these hallways are dark. They look sorta familiar, but obviously you've never seen them before. You enter the East Wing. You see a mole-like man in a fur coat and a headlamp touching two sparking cables together. He seems drawn to the sparking like a mosquito to a bug zapper.//
+
+[[Next | 1-3]]
+
+
+:: CAFETERIA {"position":"1800,1000","size":"100,100"}
+
+
+
+:: CRYOBED [no-undo] {"position":"450,275","size":"100,100"}
+<<nobr>>
+  <<if $dayNum is 0 && $wakingUp>>
+    <<set $pageTitle to "YOU AWAKE IN A CRYOBED">>
+  <<elseif $dayNum gt 0 && $wakingUp>>
+  	<<set $pageTitle to "GOOD MORNING, MR. PRESIDENT">>
+  <<else>>
+	<<set $pageTitle to "YOU SIT IN THE CRYOBED">>
+  <</if>>
+  
+  <<set $pageImg to 'https://github.com/mnyrop/twine-tests/blob/main/src/media/cryobed.png?raw=true'>>
+  <<set $arrivingInOO to true>>
+
+  <<include Header>>
+<</nobr>>
+
+- [[Pick up your DIARY|DIARY]] 
+- [[Go to the OVAL OFFICE|OVAL OFFICE]] 
+- <<link [[Go to SLEEP|SLEEP]]>><<set $dayNum += 1, $wakingUp to true, $arrivingInOO to true>><</link>>
+
+
+:: DARK WEB {"position":"1000,450","size":"100,100"}
+<<nobr>>
+  <<set $pageTitle to 'YOU ENTER THE DARK WEB' >>
+  <<unset $pageImg>>
+
+  <<include Header>>
+<</nobr>>
+
+- <<link [[Exit the DARK WEB|OVAL OFFICE]]>><<set $arrivingInOO to false>><</link>>
+
+
+:: DIARY {"position":"125,300","size":"100,100"}
+<<nobr>>
+  <<set $pageTitle to 'YOU PICK UP YOUR DIARY' >>
+  <<set $pageImg to 'https://github.com/mnyrop/twine-tests/blob/main/src/media/diary.png?raw=true'>>
+
+  <<include Header>>
+<</nobr>>
+
+- [[Open to TODAY|TODAY]]\
+<<if $dayNum gt 0>>
+- [[Open to YESTERDAY|YESTERDAY]]<</if>>
+- <<link [[Close DIARY|CRYOBED]]>><<set $wakingUp to false>><</link>>
+
+
+:: DRAWER {"position":"850,450","size":"100,100"}
+<<nobr>>
+  <<set $pageTitle to 'YOU OPEN THE DESK DRAWER' >>
+  <<set $pageImg to 'https://github.com/mnyrop/twine-tests/blob/main/src/media/drawer.png?raw=true'>>
+
+  <<include Header>>
+<</nobr>>
+
+<<if not $showMessage1>>
+<<include Message_1>>
+<</if>>
+
+- <<link [[Close the DESK DRAWER|OVAL OFFICE]]>><<set $arrivingInOO to false>><</link>>
+
+
+:: Director Ume turns towards you, the cables sparking and casting long shadows behind him {"position":"1600,1400","size":"100,100"}
+''DIRECTOR, OFFICE OF MANAGEMENT & BUDGET--QUENTIN UME''
+The future of the White House is diesel, Mr. President. Maybe nuclear at some point...and other things. Fly wheels on the turbines are made out of Ritz crackers, not really another option. I made a prototype of exactly what we need. Could show it to you now...would feel like letting go of a part of myself...
+
+[[Sure, why not]]
+
+
+:: Header {"position":"975,0","size":"100,100"}
+PRESIDENT CORPSE / DAY <<- $dayNum >>
+
+<<if $pageTitle>><<type 80ms skipkey "Enter">>!$pageTitle<</type>><</if>>
+<<if $pageImg>>[img[$pageImg]]<</if>>
+
+
+:: Hmmm {"position":"1600,1600","size":"100,100"}
+''DIRECTOR, OFFICE OF MANAGEMENT & BUDGET--QUENTIN UME''
+Diesel generator. There's twenty more in my workshop. Go ahead. Give it a tug.
+
+[["Tug" the pull cord]]
+
+
+:: I'm going to be honest: I'm a little confused about what all is going on, and a stroll by myself doesn't sound so bad right now. {"position":"1900,800","size":"100,100"}
+
+
+
+:: MAP {"position":"725,450","size":"100,100"}
+<<nobr>>
+  <<set $pageTitle to 'YOU OPEN THE WHITE HOUSE MAP' >>
+  <<set $pageImg to 'https://github.com/mnyrop/twine-tests/blob/main/src/media/map.png?raw=true'>>
+
+  <<include Header>>
+<</nobr>>
+
+- <<link [[Close the WHITE HOUSE MAP|OVAL OFFICE]]>><<set $arrivingInOO to false>><</link>>
+
+
+:: Message_1 {"position":"1100,200","size":"100,100"}
+<div style="font-family:monospace;border:inset;padding:20px;width:80%">
+	<b>DAY 0 – MESSAGE 1</b>
+    <p>i should have that dedicated ARK-day EB-way terminal you asked for set up in the OO by day 5 at the latest, sir. have fun!  🫡  -p</p>\
+    <<if not $m1_inDrawer >>
+      <<nobr>
+      	<p style="text-align:right;">
+        <<link "Move to drawer">>
+            <<set  $m1_inDrawer to true>>
+            <<redo "messages">>
+        <</link>>
+      </p>
+    <</nobr>>
+  <</if>>
+</div>
+
+
+:: Next {"position":"1700,300","size":"100,100"}
+''SLIGHTLY LESS BLURRY FIGURE''
+Hello? Mr. President?
+
+[[A pasty twenty-something with a clipboard comes into clear vision]]
+
+
+:: OVAL OFFICE {"position":"775,325","size":"100,100"}
+<<nobr>>
+	<<if $arrivingInOO>>
+		<<set $pageTitle to 'YOU ENTER THE OVAL OFFICE' >>
+     <<else>>
+     	<<set $pageTitle to 'YOU SIT IN THE OVAL OFFICE' >>
+     <</if>>
+  	<<set $pageImg to 'https://github.com/mnyrop/twine-tests/blob/main/src/media/oo.png?raw=true'>>
+  	<<include Header>>
+<</nobr>>
+
+<<linkreplace "Read New Messages">>
+      <<if $dayNum lt 5 && !$m1_inDrawer>>
+        <<do tag "messages">>
+          <<include Message_1>>
+        <</do>>
+      <<else>>
+      	No new messages
+      <</if>>
+  <</linkreplace>>
+
+- [[Pick up the PHONE|PHONE]] 
+- [[Open the WHITE HOUSE MAP|MAP]] 
+- [[Open the DESK DRAWER|DRAWER]]\
+<<if $dayNum gt 4>>
+- [[Enter the DARK WEB|DARK WEB]]<</if>>
+- <<link [[Go back to the CRYOBED|CRYOBED]]>><<set $wakingUp to false>><</link>>
+
+
+:: Open map {"position":"1600,1900","size":"100,100"}
+Map of the White House that as the game progresses will have more and more rooms available on it. For the time being, mostly blacked out except for the Oval Office, East Wing, and Cafeteria.
+
+[[OVAL OFFICE]]
+[[CAFETERIA]]
+
+
+:: PHONE {"position":"600,450","size":"100,100"}
+<<nobr>>
+  <<set $pageTitle to 'YOU PICK UP THE PHONE' >>
+  <<set $pageImg to 'https://github.com/mnyrop/twine-tests/blob/main/src/media/phone.png?raw=true'>>
+
+  <<include Header>>
+<</nobr>>
+
+
+- Dial 911
+- <<link [[Put down the PHONE|OVAL OFFICE]]>><<set $arrivingInOO to false>><</link>>
+
+
+:: PassageFooter {"position":"1100,0","size":"100,100"}
+
+
+
+:: SLEEP {"position":"700,200","size":"100,100"}
+<<nobr>>
+  <<set $pageTitle to 'YOU DRIFT OFF............' >>
+  <<unset $pageImg>>
+
+  <<include Header>>
+<</nobr>>
+
+<<timed 4s>>
+	<<goto [[CRYOBED]] >>
+<</timed>>
+
+
+:: START {"position":"450,75","size":"100,100"}
+<<run UIBar.stow()>>
+
+!PRESIDENT CORPSE
+
+<<type 60ms skipkey "Enter">>[[WAKE UP|CRYOBED]]<</type>>
+
+
+
+
+:: StoryInit {"position":"850,0","size":"100,100"}
+<<set $dayNum to 0>>
+<<set $wakingUp to true>>
+<<set $arrivingInOO to true>>
+<<set $m1_inDrawer to false>>
+
+<<cacheaudio "boom" "music/explosion.mp3">>
+<<waitforaudio>>
+
+
+
+:: Struggling to make words {"position":"1700,600","size":"100,100"}
+''CHIEF OF STAFF--STANLEY PEPPERS''
+So first off, these storms have knocked out the power again. Director Ume has been able to route emergency power to certain areas, but most of the White House is in total darkness, unfortunately. Director Ume needs your approval before taking certain...steps. He's in the East Wing. We're a little short-staffed right now, haha. It's all hands on deck. 
+
+[[Next | 1-1]]
+
+
+:: Sure, why not {"position":"1600,1500","size":"100,100"}
+//Ume hands you the two sparking cables and he disappears into the shadows. You hear some loud clanging, like a tree made out of frying pans was being sawed down. Then there's some squeaking, and he emerges with what looks like an enormous malfunctioning toaster on a dolly. What looks like an elephant trunk is protruding from the top; a pull cord appears to have been removed from a lawn mower and affixed to the side of this monstrosity.//
+
+[[Hmmm]]]
+
+
+:: TODAY {"position":"25,475","size":"100,100"}
+<<nobr>>
+  <<set $pageTitle to "YOU OPEN TODAY'S ENRTY">>
+  <<unset $pageImg>>
+  <<include Header>>
+<</nobr>>
+- Write a LOG of events
+- Write about how you FEEL\
+<<if $dayNum gt 0>>
+- [[Open YESTERDAY's entry|YESTERDAY]]<</if>>
+- <<link [[Close DIARY|CRYOBED]]>><<set $wakingUp to false>><</link>>
+
+
+
+
+
+:: Thanks for showing me this. Any idea where my Surgeon is? {"position":"1600,1800","size":"100,100"}
+''DIRECTOR, OFFICE OF MANAGEMENT & BUDGET--QUENTIN UME''
+In the cafeteria last I saw. Wanted an ice cream sandwich.
+
+Oh, here's a map.
+
+[[Open map]]
+
+
+:: Untitled Passage {"position":"1700,200","size":"100,100"}
+''BLURRY FIGURE''
+Mr. President?
+
+[[Next]]
+
+
+:: Who is this moose-hatted pencil-neck? {"position":"1700,500","size":"100,100"}
+''CHIEF OF STAFF--STANLEY PEPPERS''
+It's a pleasure to meet you. I'm Stanley Peppers, your Chief of Staff. I know you have a lot of questions, but I figured you'd prefer to just jump into the deep end. I have some updates for you.
+
+[[Struggling to make words]]
+
+
+:: YESTERDAY {"position":"200,475","size":"100,100"}
+<<nobr>>
+  <<set $pageTitle to "YOU OPEN YESTERDAY'S ENRTY" >>
+  <<unset $pageImg>>
+  <<include Header>>
+<</nobr>>
+- [[Open TODAY's entry|TODAY]]  
+- <<link [[Close DIARY|CRYOBED]]>><<set $wakingUp to false>><</link>>
+
+
+
+:: You can take me to Director Ume. Let's not waste time. {"position":"1600,900","size":"100,100"}
+''CHIEF OF STAFF--STANLEY PEPPERS''
+Dandy! Let's boogie!
+
+[[Boogie]]
+
+
+:: Your plan? {"position":"1600,1300","size":"100,100"}
+''DIRECTOR, OFFICE OF MANAGEMENT & BUDGET--QUENTIN UME''
+Glorified intern, that's what I call him. To his face. Inside joke.
+
+Look: snowstorms keep knocking out the power. Go figure with wind turbines. Wasn't my recommendation. Never is. 
+
+[[Director Ume turns towards you, the cables sparking and casting long shadows behind him]]
+
+
+:: StoryStylesheet [stylesheet]
+.passage img {
+  max-width: 80%
+}
